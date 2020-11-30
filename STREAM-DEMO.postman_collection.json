@@ -1,0 +1,459 @@
+{
+	"info": {
+		"_postman_id": "59d9e499-cef2-439b-8f98-66c35d8a829e",
+		"name": "STREAM-DEMO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Cars",
+			"item": [
+				{
+					"name": "1.1 Get Random Cars",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cars/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cars",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.2 Get Cars Filtered by Max Speed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cars/by-speed?min-speed=200&max-speed=250",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cars",
+								"by-speed"
+							],
+							"query": [
+								{
+									"key": "min-speed",
+									"value": "200"
+								},
+								{
+									"key": "max-speed",
+									"value": "250"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.3 Get Cars Map By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cars/by-id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cars",
+								"by-id"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.4 Get Cars by Color",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cars/by-color/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cars",
+								"by-color",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.5 Filter Cars By Color(s)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cars/color-filter?color=BLACK&color=WHITE&color=RED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cars",
+								"color-filter"
+							],
+							"query": [
+								{
+									"key": "color",
+									"value": "BLACK"
+								},
+								{
+									"key": "color",
+									"value": "WHITE"
+								},
+								{
+									"key": "color",
+									"value": "RED"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.6 Get N Cars of a Brand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cars/count-of-brand?count=20&brand=Mazda",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cars",
+								"count-of-brand"
+							],
+							"query": [
+								{
+									"key": "count",
+									"value": "20"
+								},
+								{
+									"key": "brand",
+									"value": "Mazda"
+								}
+							]
+						},
+						"description": "Returns a given number of random cars of a brand"
+					},
+					"response": []
+				},
+				{
+					"name": "1.7 Count Cars by Manufacturer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cars/count-by-brand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cars",
+								"count-by-brand"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "2. Color",
+			"item": [
+				{
+					"name": "2.1 Objects With Same Color",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/color/black",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"color",
+								"black"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "3. Collector",
+			"item": [
+				{
+					"name": "3.1 Reverse",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"First\", \"Second\", \"Third\", \"Fourth is with me and I'm one with the fourth\"]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/collector/reverse",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"collector",
+								"reverse"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.2 Sum Length of Strings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"a\", \"aaaaaaa\", \"aa\"]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/collector/char-count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"collector",
+								"char-count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.3 Longest String",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"aaa\", \"aaaab\", \"aaaa\", \"aaaaa\"]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/collector/longest-string",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"collector",
+								"longest-string"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "4. Reduce",
+			"item": [
+				{
+					"name": "4.1 Longest Common Prefix",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"aaaabaa\", \"aaaabb\", \"aaaabcc\", \"aaaab\", \"aaaabaaaaaadafsdfvsfds\"]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reduce/prefix",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reduce",
+								"prefix"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "4.2 Sum length of strings",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\"a\", \"aa\", \"aaa\", \"aaaaa\"]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/reduce/char-count",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"reduce",
+								"char-count"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "5. Primes",
+			"item": [
+				{
+					"name": "5.1 Get primes under limit (recursive)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/prime/recursive?max=10000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prime",
+								"recursive"
+							],
+							"query": [
+								{
+									"key": "max",
+									"value": "10000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5.2 Get primes under limit (iterative)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/prime/iterative?max=100000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prime",
+								"iterative"
+							],
+							"query": [
+								{
+									"key": "max",
+									"value": "100000"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "5.3 Get primes under limit (oldschool)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/prime/oldschool?max=199999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"prime",
+								"oldschool"
+							],
+							"query": [
+								{
+									"key": "max",
+									"value": "199999"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
